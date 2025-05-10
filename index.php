@@ -6,10 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Sacred Knowledge</title>
         <link rel="stylesheet" href="style.css">
+
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     </head>
     <body>
         <div class="container">
-            <nav class="navbar">
+            <nav class="navbar" data-aos="fade-down" data-aos-duration="1500">
                 <div class="container-fluid">
                     <h3 style="color: white; font-size: 30px;">Sacred Knowledge</h3>
                     <div class="collapse">
@@ -27,22 +29,27 @@
         </div>
 
         <div class="hero">
-            <div class="hero-head">
+            <div class="hero-head" data-aos="fade-right" data-aos-duration="1500">
                 <h1 class="primary-head">Knowledge at your tip!</h1>
                 <p class="lead">Libraries store the energy that fuels the imagination. They open up windows to the
                     world and inspire us to explore and achieve, and contribute to improving our quality of life.
                 </p>
                 <div class="cta-btn">
                     <form class="btn-flex" action="index.php" method="POST">
-                        <input class="signin-btn" type="submit" value="Sign-up" name="sign_up">
-                        <input class="login-btn" type="submit" value="Log-in" name="sign_in">
+                        <input class="signin-btn" type="submit" value="Sign up" name="sign_up">
+                        <input class="login-btn" type="submit" value="Login" name="sign_in">
                     </form>
                 </div>
             </div>
-            <div class="primary-image">
-                <img src="./asset/img/book.jpg" class="p-img" alt="library" width="600" height="400">
+            <div class="primary-image" data-aos="fade-left" data-aos-duration="800">
+                <img src="./asset/img/book.jpg" class="p-img" alt="library">
             </div>
         </div>
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
     </body>
 </html>
 <?php
