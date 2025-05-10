@@ -1,7 +1,3 @@
-<?php
-    include_once "../db.php";
-    session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,7 +7,7 @@
         <title>User Sign up Page</title>
         <!-- <link rel="stylesheet" href="../style.css"> -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../admin/login_logout/logstyle.css">
+        <link rel="stylesheet" href="../../admin/login_logout/logstyle.css">
         
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" defer></script>
@@ -24,7 +20,7 @@
                 <label style="font-size:40px; color:rgb(154, 228, 183)">User Sign-up</label>
             </div>
             <div class="row justify-content-center">
-                <form action="signup.php" method="post" id="signup_form">
+                <form action="sign_up_process.php" method="post" id="signup_form">
                     <div class="form-group">
                         <label>Name</label>
                         <input type="text" name="user_name" class="form-control" placeholder="Enter Your Name">
