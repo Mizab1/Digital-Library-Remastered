@@ -21,7 +21,7 @@
         </div>
         <?php endif; ?>
         <div class="justify-content-center text-center">
-            <label style="font-family: 'Lexend Deca'; font-size:50px; color:white;">Admin Login</label>
+            <label style="font-size:50px; color:white;">Admin Login</label>
         </div>
         <div class="row justify-content-center">
             <form action="log_process.php" method="post">
