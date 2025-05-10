@@ -1,14 +1,14 @@
 <?php
+	include_once "../../db.php";
+    session_start();
+
 	if (isset($_POST['user_email'])) {
 		$email = $_POST['user_email'];
 		$query = "select * from user where (user_email='$email');";
 		$result = mysqli_query($connectdb, $query);
 
 		if (mysqli_num_rows($result) > 0) {
-			$row = mysqli_fetch_assoc($result);
-			if ($email == isset($row['user_email'])) {
-				echo "Email Id already taken! Please try another email address.";
-			}
+			header("location:../../common/email_error.php");
 		} else {
 			if (isset($_POST['signup'])) {
 				$name = $_POST['user_name'];
@@ -27,7 +27,7 @@
 					$_SESSION['user_name'] = $name;
 					$_SESSION['user_email'] = $email;
 					$_SESSION['user_password'] = $password;
-					header("location:./dashboard.php");
+					header("location:../dashboard.php");
 				} else {
 					echo "Please Insert Data";
 				}
