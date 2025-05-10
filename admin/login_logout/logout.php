@@ -1,0 +1,6 @@
+<?php
+    unset($_SESSION["email"]);
+    unset($_SESSION["pass"]);
+    
+    header("location: ../../index.php");
+?>
