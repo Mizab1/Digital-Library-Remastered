@@ -9,8 +9,8 @@
     <body>
         <div class="error-container">
             <div class="error-icon">✕</div>
-            <h1>Invalid Login Details</h1>
-            <p>The details you entered is incorrect. Please try again.</p>
+            <h1>Email Already Exists</h1>
+            <p>The email you entered already exists. Please try again.</p>
             <a href="../index.php" class="try-again">Homepage</a>
         </div>
     </body>
