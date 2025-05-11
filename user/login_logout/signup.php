@@ -17,7 +17,7 @@
         <div class="bg-image"></div>
         <div class="container bg-text">
             <div class="justify-content-center text-center">
-                <label style="font-size:40px; color:rgb(154, 228, 183)">User Sign-up</label>
+                <label style="font-size:40px;">User Sign-up</label>
             </div>
             <div class="row justify-content-center">
                 <form action="sign_up_process.php" method="post" id="signup_form">

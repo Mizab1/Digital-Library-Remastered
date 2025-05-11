@@ -13,7 +13,7 @@
     <div class="bg-image"></div>
     <div class="container bg-text">
         <div class="justify-content-center text-center">
-            <label style="font-size:40px; color:rgb(154, 228, 183)">User Log-in</label>
+            <label style="font-size:40px;">User Log-in</label>
         </div>
         <div class="row justify-content-center">
             <form action="login_process.php" method="POST" id="login_form">
@@ -26,7 +26,7 @@
                     <input type="password" name="user_password" class="form-control" placeholder="Enter Your Password" required>
                 </div>
                 <div class="form-group text-center">
-                    <button type="submit" class="btn btn-primary" name="login">Sign in</button>
+                    <button type="submit" class="btn btn-primary" name="login">Login</button>
                 </div>
             </form>
         </div>

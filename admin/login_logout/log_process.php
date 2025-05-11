@@ -1,6 +1,5 @@
 <?php
-    $conn = mysqli_connect("localhost", "root", "", "library");
-
+    include_once "../../db.php";
     session_start();
 
     
@@ -8,7 +7,7 @@
         $username = $_POST["username"];
         $pass = $_POST["pass"];
         
-        $result = mysqli_query($conn, "SELECT * FROM admin_login WHERE username='$username' AND pass='$pass'");
+        $result = mysqli_query($connectdb, "SELECT * FROM admin_login WHERE username='$username' AND pass='$pass'");
         
         if(mysqli_num_rows($result) == 1){
             $_SESSION["email"] = $email;
