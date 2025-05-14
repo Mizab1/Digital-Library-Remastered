@@ -16,6 +16,7 @@
         if ($data_count > 0) {
             $_SESSION['user_email'] = $email;
             $_SESSION['user_password'] = $password;
+
             header("location:../dashboard.php");
         } else {
             header("location:../../common/invalid_details.php");

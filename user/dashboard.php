@@ -19,50 +19,50 @@
         <link rel="stylesheet" href="../admin/admin_style.css">
     </head>
     <body>
-            <div class="topnav">
-                <!-- <a class="active" href="#home">Logout</a> -->
-                <div class="search-container">
-                    <form action="dashboard.php" method="post">
-                        <button class="logout-btn btn btn-danger" name="logout">Logout</button>
-                        <input type="text" placeholder="Search.." name="search_keyword">
-                        <button type="submit" class="search-btn btn-secondary btn" name="search_btn">Search</button>
-                    </form>
-                </div>
-            </div>
-            <div class="justify-content-center">
+        <div class="topnav">
+            <!-- <a class="active" href="#home">Logout</a> -->
+            <div class="search-container">
                 <form action="dashboard.php" method="post">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Book Name</th>
-                                <th>Author Name</th>
-                                <th>Pages</th>
-                                <th colspan="2">Action</th>
-                            </tr>
-                        </thead>
-                        <?php
-                        while ($row = mysqli_fetch_assoc($result)) :
-                        ?>
-                        <tr>
-                            <td><?php echo $row["book_name"]; ?></td>
-                            <td><?php echo $row["auth_name"]; ?></td>
-                            <td><?php echo $row["pages"]; ?></td>
-                            <td>
-                                <?php
-                                    if (isset($_GET["view"])) {
-                                        $id = $_GET["view"];
-                                        $location_query = mysqli_query($connectdb, "SELECT * FROM book WHERE book_id=$id");
-                                        while ($row_loc = mysqli_fetch_assoc($location_query)) {
-                                            header("location: " . $row_loc["pdf_add"]);
-                                        }
-                                    }
-                                    ?>
-                                <a href="dashboard.php?view=<?php echo $row["book_id"]; ?>" class="btn btn-info">View</a>
-                            </td>
-                        </tr>
-                        <?php endwhile; ?>
-                    </table>
+                    <button class="logout-btn btn btn-danger" name="logout">Logout</button>
+                    <input type="text" placeholder="Search.." name="search_keyword">
+                    <button type="submit" class="search-btn btn-secondary btn" name="search_btn">Search</button>
                 </form>
             </div>
+        </div>
+        <div class="justify-content-center">
+            <form action="dashboard.php" method="post">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Book Name</th>
+                            <th>Author Name</th>
+                            <th>Pages</th>
+                            <th colspan="2">Action</th>
+                        </tr>
+                    </thead>
+                    <?php
+                    while ($row = mysqli_fetch_assoc($result)) :
+                    ?>
+                    <tr>
+                        <td><?php echo $row["book_name"]; ?></td>
+                        <td><?php echo $row["auth_name"]; ?></td>
+                        <td><?php echo $row["pages"]; ?></td>
+                        <td>
+                            <?php
+                                if (isset($_GET["view"])) {
+                                    $id = $_GET["view"];
+                                    $location_query = mysqli_query($connectdb, "SELECT * FROM book WHERE book_id=$id");
+                                    while ($row_loc = mysqli_fetch_assoc($location_query)) {
+                                        header("location: " . $row_loc["pdf_add"]);
+                                    }
+                                }
+                                ?>
+                            <a href="dashboard.php?view=<?php echo $row["book_id"]; ?>" class="btn btn-info">View</a>
+                        </td>
+                    </tr>
+                    <?php endwhile; ?>
+                </table>
+            </form>
+        </div>
     </body>
 </html>
