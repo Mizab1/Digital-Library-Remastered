@@ -1,6 +1,6 @@
 <?php
 
-    include_once "../db.php";
+    $connectdb = mysqli_connect("localhost", "root", "", "library");
 
     $id = 0;
     $update = false;

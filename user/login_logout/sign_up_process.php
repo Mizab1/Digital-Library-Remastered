@@ -1,5 +1,5 @@
 <?php
-	include_once "../../db.php";
+	$connectdb = mysqli_connect("localhost", "root", "", "library");
     session_start();
 
 	if (isset($_POST['user_email'])) {

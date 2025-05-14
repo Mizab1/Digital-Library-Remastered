@@ -1,5 +1,5 @@
 <?php
-    include_once "../db.php";
+   $connectdb = mysqli_connect("localhost", "root", "", "library");
     session_start();
 
     
@@ -10,10 +10,10 @@
         $result = mysqli_query($connectdb, "SELECT * FROM admin_login WHERE username='$username' AND pass='$pass'");
         
         if(mysqli_num_rows($result) == 1){
-            $_SESSION["email"] = $email;
+            $_SESSION["username"] = $username;
             $_SESSION["pass"] = $pass;
             
-            $_SESSION["message"] = "Success";
+            $_SESSION["message"] = "Welcome back " . $_SESSION["username"] . "!";
             $_SESSION["msg_type"] = "success";
             
             header("location: ../main_page.php");
