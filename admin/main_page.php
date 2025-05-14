@@ -40,9 +40,9 @@
     <?php
     if (isset($_POST["search_keyword"])) {
         $search_keyword = $_POST["search_keyword"];
-        $result = mysqli_query($conn, "SELECT * FROM book WHERE book_name LIKE '%$search_keyword%'");
+        $result = mysqli_query($connectdb, "SELECT * FROM book WHERE book_name LIKE '%$search_keyword%'");
     } else {
-        $result = mysqli_query($conn, "SELECT * FROM book");
+        $result = mysqli_query($connectdb, "SELECT * FROM book");
     }
     ?>
     <div class="justify-content-center">
