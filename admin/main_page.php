@@ -14,18 +14,18 @@
     <?php require_once "login_logout/log_process.php" ?>
     <?php require_once "admin_process.php" ?>
     <?php if (isset($_SESSION["message"])) : ?>
-    <div class="alert alert-<?= $_SESSION["msg_type"] ?>">
-        <?php
-            echo $_SESSION["message"];
-            unset($_SESSION["message"]);
-        ?>
-    </div>
+        <div class="alert alert-<?= $_SESSION["msg_type"] ?>">
+            <?php
+                echo $_SESSION["message"];
+                unset($_SESSION["message"]);
+            ?>
+        </div>
     <?php endif; ?>
 
     <?php
-    if (isset($_POST["logout"])) {
-        header("location: login_logout/logout.php");
-    }
+        if (isset($_POST["logout"])) {
+            header("location: login_logout/logout.php");
+        }
     ?>
     <div class="topnav">
         <!-- <a class="active" href="#home">Logout</a> -->
