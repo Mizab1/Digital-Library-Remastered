@@ -6,6 +6,7 @@
     }
     if (isset($_POST["search_keyword"])) {
         $search_keyword = $_POST["search_keyword"];
+        $search_keyword = str_replace("'", "''", $search_keyword);
         $result = mysqli_query($connectdb, "SELECT * FROM book WHERE book_name LIKE '%$search_keyword%'");
     } else {
         $result = mysqli_query($connectdb, "SELECT * FROM book");
@@ -23,9 +24,9 @@
             <!-- <a class="active" href="#home">Logout</a> -->
             <div class="search-container">
                 <form action="dashboard.php" method="post">
-                    <button class="logout-btn btn btn-danger" name="logout">Logout</button>
-                    <input type="text" placeholder="Search.." name="search_keyword">
                     <button type="submit" class="search-btn btn-secondary btn" name="search_btn">Search</button>
+                    <input type="text" placeholder="Search.." name="search_keyword">
+                    <button class="logout-btn btn btn-danger" name="logout">Logout</button>
                 </form>
             </div>
         </div>
@@ -34,20 +35,20 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Book Name</th>
-                            <th>Author Name</th>
-                            <th>Pages</th>
-                            <th colspan="2">Action</th>
+                            <th class="text-center">Book Name</th>
+                            <th class="text-center">Author Name</th>
+                            <th class="text-center">Pages</th>
+                            <th class="text-center" colspan="2">Action</th>
                         </tr>
                     </thead>
                     <?php
                     while ($row = mysqli_fetch_assoc($result)) :
                     ?>
                     <tr>
-                        <td><?php echo $row["book_name"]; ?></td>
-                        <td><?php echo $row["auth_name"]; ?></td>
-                        <td><?php echo $row["pages"]; ?></td>
-                        <td>
+                        <td class="text-center"><?php echo $row["book_name"]; ?></td>
+                        <td class="text-center"><?php echo $row["auth_name"]; ?></td>
+                        <td class="text-center"><?php echo $row["pages"]; ?></td>
+                        <td class="text-center">
                             <?php
                                 if (isset($_GET["view"])) {
                                     $id = $_GET["view"];

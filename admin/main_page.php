@@ -31,9 +31,9 @@
         <!-- <a class="active" href="#home">Logout</a> -->
         <div class="search-container">
             <form action="main_page.php" method="post">
-                <button class="logout-btn btn btn-danger" name="logout" tabindex="-1">Logout</button>
                 <input type="text" placeholder="Search.." name="search_keyword" id="search_keyword">
                 <button type="submit" class="search-btn btn-secondary btn" name="search_btn" id="search_btn">Search</button>
+                <button class="logout-btn btn btn-danger" name="logout" tabindex="-1">Logout</button>
             </form>
             <script src="searchHandler.js"></script>
         </div>
