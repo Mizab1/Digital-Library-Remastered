@@ -12,6 +12,7 @@
         $uniq_filename = uniqid() . uniqid();
         $location = "../files/" . $uniq_filename . ".pdf";
         $book_name = $_POST["book_name"];
+        $book_name = str_replace("'", "''", $book_name);
         $auth_name = $_POST["auth_name"];
         $pages = $_POST["pages"];
 
@@ -27,7 +28,14 @@
     if (isset($_GET["delete"])) {
         $id = $_GET["delete"];
 
-        mysqli_query($connectdb, "DELETE FROM book WHERE book_id=$id");
+        $result = mysqli_query($connectdb, "SELECT * FROM book WHERE book_id=$id");
+        if (mysqli_num_rows($result) == 1) {
+            $row = mysqli_fetch_assoc($result);
+            $file_name = $row["pdf_add"];
+            unlink($file_name);
+    
+            mysqli_query($connectdb, "DELETE FROM book WHERE book_id=$id");
+        }
 
         $_SESSION["message"] = "Details has been deleted";
         $_SESSION["msg_type"] = "danger";
