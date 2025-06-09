@@ -58,3 +58,8 @@ body {
     /* top: 14px; */
     margin-top: 10px;
 }
+
+.save {
+    margin: 0 auto;
+    display: block;
+}
